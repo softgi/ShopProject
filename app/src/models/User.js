@@ -24,6 +24,15 @@ class User {
             return { success: false, err};
         }
     }
+
+    async register() {
+        const client = this.body;
+        try{
+            const user = await UserStorage.save(client);
+        }catch(err){
+            return { success: false, err};
+        }
+    }
 }
 
 module.exports = User;
