@@ -23,6 +23,7 @@ const process = {
         else 
             return res.json(response);
     },
+    
     register: async (req, res) => {
         const user = new User(req.body);
         const response = await user.register();
@@ -31,8 +32,9 @@ const process = {
         else
             return res.json(response);
     }
-}
+};
+
 module.exports = {
     output,
     process
-}
+};

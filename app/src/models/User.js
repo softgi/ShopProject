@@ -28,7 +28,8 @@ class User {
     async register() {
         const client = this.body;
         try{
-            const user = await UserStorage.save(client);
+            const response = await UserStorage.save(client);
+            return response;
         }catch(err){
             return { success: false, err};
         }
